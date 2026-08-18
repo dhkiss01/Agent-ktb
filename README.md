@@ -27,16 +27,16 @@ brew install ollama
 ollama serve
 
 # 별도 터미널에서 모델 다운로드
-ollama pull llama3.2
+ollama pull qwen2.5:7b
 
 cd /Users/lukas.lee/agent-practice
 python3 agent.py
 ```
 
-모델은 기본적으로 로컬 `llama3.2`를 사용합니다. 다른 모델을 쓸 경우:
+모델은 기본적으로 한국어 지시를 잘 따르는 로컬 `qwen2.5:7b`를 사용합니다. 다른 모델을 쓸 경우:
 
 ```bash
-export OLLAMA_MODEL="qwen2.5:7b"
+export OLLAMA_MODEL="llama3.2"
 ```
 
 종료는 `/exit`, 새 대화는 `/reset`입니다.

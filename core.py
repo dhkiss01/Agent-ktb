@@ -10,9 +10,9 @@ from collections.abc import Iterator
 
 from tools import TOOLS, TOOL_FUNCTIONS
 
-MODEL = os.getenv("OLLAMA_MODEL", "llama3.2")
+MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5:7b")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/chat")
-SYSTEM_PROMPT = """너는 사용자의 일을 돕는 한국어 에이전트다.
+SYSTEM_PROMPT = """너는 사용자의 일을 돕는 한국어 에이전트다. 항상 자연스러운 한국어로 답한다.
 사용자의 입력 언어를 따라 답하고, 모르는 값은 지어내지 않는다.
 계산이 필요하면 반드시 calculate 도구를 사용한다.
 최근 게임 1위처럼 최신 정보가 필요하면 recent_game_winner 도구를 사용한다.
