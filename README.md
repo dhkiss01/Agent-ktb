@@ -1,6 +1,6 @@
 # 로컬 Ollama 에이전트 실습
 
-CLI와 Streamlit 웹 UI가 공통 에이전트 루프와 도구를 사용하는 구조입니다.
+CLI와 Streamlit 웹 UI가 공통 에이전트 루프와 도구를 사용하는 구조입니다. UI는 Orbit이라는 이름의 로컬 AI 작업공간으로 구성되어 있습니다.
 
 - CLI에서 대화가 이어짐
 - 대화 이력을 SQLite 세션 DB에 저장
@@ -41,12 +41,20 @@ export OLLAMA_MODEL="qwen2.5:7b"
 
 종료는 `/exit`, 새 대화는 `/reset`입니다.
 
-웹 UI를 실행하려면:
+### 웹 UI 실행
 
 ```bash
 python3 -m pip install -r requirements.txt
 python3 -m streamlit run app.py
 ```
+
+브라우저에서 `http://localhost:8501`을 열면 Orbit UI를 사용할 수 있습니다. 화면에는 대화 세션 목록, 현재 로컬 모델 상태, 도구 실행 상태가 표시됩니다. Ollama가 이미 실행 중이면 `ollama serve`를 다시 실행하지 않습니다.
+
+UI에서 지원하는 예시:
+
+- `오늘 할 일을 우선순위별로 정리해줘.`
+- `125 * 48을 계산해줘.`
+- `최근 게임 1위가 뭔지 알려줘.`
 
 ## 테스트 예시
 
