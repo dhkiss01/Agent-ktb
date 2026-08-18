@@ -41,7 +41,7 @@ export OLLAMA_MODEL="qwen2.5:7b"
 
 종료는 `/exit`, 새 대화는 `/reset`입니다.
 
-### 웹 UI 실행
+### 웹 UI 실행 — Orbit
 
 ```bash
 python3 -m pip install -r requirements.txt
@@ -49,6 +49,8 @@ python3 -m streamlit run app.py
 ```
 
 브라우저에서 `http://localhost:8501`을 열면 Orbit UI를 사용할 수 있습니다. 화면에는 대화 세션 목록, 현재 로컬 모델 상태, 도구 실행 상태가 표시됩니다. Ollama가 이미 실행 중이면 `ollama serve`를 다시 실행하지 않습니다.
+
+화면이 열리지 않으면 Streamlit 실행 터미널에 표시된 주소를 확인하세요. 기본 주소는 `http://localhost:8501`이며, 실행 중인 프로세스는 `Ctrl+C`로 종료할 수 있습니다.
 
 UI에서 지원하는 예시:
 

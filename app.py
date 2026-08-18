@@ -99,16 +99,15 @@ if not visible_messages:
     )
 
 for message in visible_messages:
-    avatar = "🧑" if message.get("role") == "user" else "✦"
-    with st.chat_message(message["role"], avatar=avatar):
+    with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
 user_input = st.chat_input("메시지를 입력하세요 · 예: 최근 게임 1위가 뭐야?")
 if user_input:
     messages.append({"role": "user", "content": user_input})
-    with st.chat_message("user", avatar="🧑"):
+    with st.chat_message("user"):
         st.markdown(user_input)
-    with st.chat_message("assistant", avatar="✦"):
+    with st.chat_message("assistant"):
         final_text = ""
         with st.status("에이전트가 생각하고 있어요…", expanded=True) as status:
             for event in step(messages):
